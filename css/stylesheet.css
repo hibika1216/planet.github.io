@@ -1,0 +1,847 @@
+@charset "UTF-8";
+/* ・・・・・・・・・・・・・・・・・・・・・・・・・共通・全体・・・・・・・・・・・・・・・・・・・・・・・・・ */
+* {
+  margin: 0;
+  padding: 0;
+}
+html { 
+  scroll-behavior: smooth;}
+body {
+  font-family: fot-tsukuardgothic-std, sans-serif;
+  letter-spacing: 3px;
+  font-size: 16px;
+  line-height: 2.7;
+}
+ul li a:hover {
+  opacity: 0.2;
+  transition: 0.4s;
+}
+/* ・・・・・・・・・・・・・・・・・・・・・・・共通・ヘッダー・・・・・・・・・・・・・・・・・・・・・・・・ */
+header {
+  background-color:#ffefe2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 150px;
+}
+
+header h1.header-logo img {
+  width: 180px;
+  margin-left: 100px;
+}
+header h1.header-logo {
+  height: 110px;
+  margin-top: 0px;
+}
+header nav ul {
+  display: flex;
+  list-style: none;
+  margin-right: 100px;
+}
+header nav ul li a {
+  color: #333333;
+  text-decoration: none;
+  font-size: 16px;
+  margin-left: 15px;
+  padding: 15px;
+}
+
+/* ・・・・・・・・・・・・・・・・・・・・・・・・共通・メイン・・・・・・・・・・・・・・・・・・・・・・・・ */
+.main-wrapper {
+  width: 960px;
+  margin: 0 auto;
+}
+/* ・・・・・・・・・・・・・ローカルナビ・・・・・・・・・・・・・ */
+.local-nav {
+  line-height: 0;
+  display: inline-block;
+  position: sticky;
+  top: 25%;
+  margin-left: 20px;
+  z-index: 2;
+}
+.local-nav ul {
+  list-style: none;
+}
+.local-nav ul li a {
+  width: 150px;
+  text-decoration: none;
+  color: #595959;
+  padding: 20px 20px;
+  text-align: center;
+  position: relative;
+  display: inline-block;
+}
+.local-nav ul li a::after {
+  position: absolute;
+  bottom: -0.1px;
+  left: 0;
+  content: '';
+  width: 100%;
+  height: 1.5px;
+  background: #ffda3c;
+  transform: scale(0, 1);
+  transform-origin: center top;
+  transition: transform .3s;
+}
+.local-nav ul li a:hover {
+  opacity: 1;
+}
+.local-nav ul li a:hover::after {
+  transform: scale(1, 1);
+}
+/* ・・・・・・・・・・ページトップ・・・・・・・・・・・・ */
+.page-top{
+  width: 100px;
+  height: 100px;
+  position: sticky;
+  left: 1300px;
+  top: 680px;
+  background: #ffda3c;
+  border-radius: 50%;
+  z-index: 2;
+}
+.page-top a{
+  position: relative;
+  display: block;
+  width: 90px;
+  height: 90px;
+  text-decoration: none;
+}
+.page-top a::before{
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  content: '\f102';
+  font-size: 30px;
+  color: #fff;
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: -80px;
+  bottom: 0;
+  right: 25px;
+  margin: auto;
+}
+.page-top a::after{
+  content: 'TOP';
+  font-size: 20px;
+  letter-spacing: 0.5;
+  color: #fff;
+  position: absolute;
+  top: 40px;
+  bottom: 0;
+  right: 14px;
+  margin: auto;
+}
+.page-top:hover {
+  opacity: 0.4;
+  transition: 0.4s;
+}
+/* ・・・・・・・・・・・・・h4見出し・・・・・・・・・・・・・ */
+h4 {
+  font-size: 23px ;
+  position: relative;
+  padding: 0 65px;
+  text-align: center;
+  width: 450px;
+  margin: 0 auto;
+  margin-bottom: 90px;
+}
+h4:before {
+  position: absolute;
+  top: calc(50% - 1px);
+  left: 0;
+  width: 100%;
+  height: 2px;
+  content: '';
+  background: #000;
+}
+h4 span {
+  position: relative;
+  padding: 0 1em;
+  background: #fff;
+}
+h4.button:before {
+  position: initial;
+  width: initial;
+  height: initial;
+  content: none;
+  background: initial;
+}
+h4.button {
+  margin: 0 auto;
+  background-color: #ffda3c;
+  padding: 10px 60px;
+  margin-bottom: 100px;
+}
+/* ・・・・・・・・・・・・・・・・・・・・・・共通・フッター・・・・・・・・・・・・・・・・・・・・・・ */
+footer {
+  background-color: #d9e0ef;
+}
+.footer-wrapper {
+  background-color: #ffefe2;
+}
+.footer-wrapper .flex {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 60px;
+  padding-bottom: 100px;
+  position: relative;
+}
+footer .sns {
+  display: flex;
+  justify-content: space-around;
+  width: 960px;
+  margin: 0 auto;
+}
+footer .sns .fab {
+  font-size: 30px;
+  background-color: white;
+  border-radius: 50px;
+  padding: 20px;
+  width: 30px;
+  margin: 20px 0;
+  text-align: center;
+}
+footer .sns a {
+  color: #4c524c;
+} 
+footer .sns a:visited {
+  color: #4c524c;
+}
+footer .sns a:hover {
+  transform:scale(1.2,1.2);
+  transition: 0.3s;
+}
+footer .map {
+  position: relative;
+}
+.footer-logo {
+  background-color: white;
+  width:  255px;
+  text-align: center;
+  border-radius: 300px;
+  padding: 30px 15px;
+  position: absolute;
+  top: 170px;
+  left: 370px;
+}
+.footer-logo p {
+  letter-spacing: 0px;
+  font-size: 12px;
+  margin-top: 10px;
+}
+.footer-logo img {
+  width: 150px;
+  margin-top: 10px;
+}
+footer .colona img {
+  width: 500px;
+  margin-top: 90px;
+  margin-right: 10px;
+}
+footer .colona p {
+  margin-top: 30px;
+  text-align: right;
+  font-size: 13px;
+}
+footer .copy p {
+  text-align: center;
+  padding: 10px;
+}
+/* ・・・・・・・・・・・・・・・・・・・・トップページ・スライド・・・・・・・・・・・・・・・・・・・・ */
+.slide {
+  position: relative;
+  width: 100%;
+  height: 720px;
+  overflow: hidden;
+}
+.slide img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+}
+@keyframes slideshow {
+  0%{
+    opacity: 0;
+  }
+  10%{
+    opacity: 1;
+  }
+  28%{
+    opacity: 1
+  }
+  38%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 0;
+  }
+}
+.slide img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  animation :slideshow 21s linear infinite;
+}
+.slide img:nth-child(2){
+  animation-delay: 7s;
+}
+.slide img:last-child{
+  animation-delay: 14s;
+}
+
+/* ・・・・・・・・・・・・・・・・・・・・トップページ・メイン・・・・・・・・・・・・・・・・・・・・ */
+/* ・・・・・・・・・・・・・・コンセプト・・・・・・・・・・・・・・ */
+.concept {
+  width: 860px;
+  margin: 0 auto;
+  letter-spacing: 5.7px;
+  justify-content: space-between;
+}
+.concept:first-child {
+  display: flex;
+  margin-bottom: 120px;
+}
+.concept:nth-child(2) {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 220px;
+}
+.concept-text h3 { 
+  font-size: 32px;
+  letter-spacing: 9px;
+}
+.concept-text h3:first-child {
+  margin-bottom: 70px;
+}
+.concept:first-child.concept-text h3:nth-child(2) {
+  text-indent: 2em;
+}
+.concept:nth-child(2) .concept-text h3:nth-child(2) {
+  text-indent: 6em;
+}
+.concept:first-child img {
+  width: 350px;
+  position: relative;
+  left: 100px;
+  bottom: 80px;
+}
+.concept:nth-child(2) img {
+  width: 350px;
+  position: relative;
+  right: 100px;
+  bottom: 80px;
+}
+.concept img {
+  animation: fuwafuwa 3s infinite ease-in-out .6s alternate;
+  background: url(../img/ico-apple.svg) no-repeat center center / 60px auto;
+  display: inline-block;
+  transition: 1.5s ease-in-out;
+}
+@keyframes fuwafuwa {
+  0% {
+    transform:translate(0, 0) rotate(-10deg);
+  }
+  50% {
+    transform:translate(0, -10px) rotate(0deg);
+  }
+  100% {
+    transform:translate(0, 0) rotate(10deg);
+  }
+}
+/* ・・・・・・・・・・Planetってどんなところ・・・・・・・・・・ */
+#planet-about .planet-about-title {
+  text-align: center;
+  margin-bottom: 190px;
+  color: #4c524c;
+}
+#planet-about .planet-about-title p:first-child {
+  margin: 0px 0 60px 0px;
+}
+#planet-about {
+  position: relative;
+}
+#planet-about img {
+  width: 200px;
+  position: absolute;
+  top: 300px;
+  left: 900px;
+
+}
+/* ・・・・・・・・・・・・・お知らせ・・・・・・・・・・・・・ */
+#news {
+  margin-bottom: 190px;
+  position: relative;
+}
+h4.button-news {
+  width: 120px;
+}
+#news p img {
+  width: 730px;
+  margin-bottom: 90px;
+}
+#news p {
+  text-align: center;
+}
+#news dl {
+  color: #4c524c;
+  width: 800px;
+  margin: 0 auto;
+  line-height: 2;
+}
+#news dl dt {
+  float: left;
+  clear: both;
+  margin-right: 65px;
+  margin-bottom: 40px;
+}
+#news dl dd {
+  float: left;
+  margin-bottom: 20px;
+} 
+#news dl::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#news p.moon img {
+  width: 500px;
+  position: absolute;
+  top: 900px;
+  left: -480px;
+}
+/* ・・・・・・・・・・・・Planetでの時間・・・・・・・・・・・・ */
+#howto {
+  padding-bottom: 200px;
+}
+#howto .howto-title p{
+  text-align: center;
+  color: #4c524c;
+}
+#howto .howto-title {
+  margin-bottom: 120px;
+}
+#howto .howto img {
+  width: 400px;
+}
+.howto p {
+  text-align: left;
+  color: #4c524c;
+  line-height: 3.5;
+}
+.howto {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 120px;
+}
+.howto:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+
+
+/* ・・・・・・・・・・・・・・・・・・・・・・・・岩盤浴,カフェ・キービジュアル・・・・・・・・・・・・・・・・・・・・・・・ */
+.key {
+  width: 960px;
+  margin: 0 auto;
+}
+/* ・・・・・・・・・・・・・・・top以外のページ・h3タイトル・・・・・・・・・・・・・・・ */
+.key h3{
+  display: inline-block;
+  border-bottom:  1px solid #333333;
+  padding: 0 30px;
+  font-size: 32px;
+}
+.key div {
+  text-align: center;
+  margin: 120px 0 140px 0;
+}
+
+
+/* ・・・・・・・・・・・・・・・・・・・・・・・・・岩盤浴・メイン・・・・・・・・・・・・・・・・・・・・・・・・・・・・ */
+/* ・・・・・・・・・・・・・・５種類の岩盤浴・・・・・・・・・・・・・ */
+#ganbanyoku-about {
+  margin-bottom: 190px;
+}
+#ganbanyoku-about .star img {
+  width: 190px;
+  position: absolute;
+  left: 100px;
+  top: 1180px;
+}
+.ganbanyoku-about-title {
+  color: #4c524c;
+  text-align: center;
+  margin-bottom: 120px;
+}
+.ganbanyoku-about-title p:nth-child(2) {
+  margin-bottom: 60px;
+}
+.ganbanyoku-types .type img  {
+  width: 300px;
+}
+.ganbanyoku-types .types {
+  display: flex;
+  justify-content: space-around;
+}
+.ganbanyoku-types .type p {
+  text-align: center;
+  margin-bottom: 100px;
+}
+/* ・・・・・・・・・・・・・・岩盤浴の効能・・・・・・・・・・・・・ */
+#ganbanyoku-kounou {
+  margin-bottom: 190px;
+}
+.kounou-text {
+  color: #4c524c;
+  text-align: center;
+}
+.kounou-text p:first-child {
+  margin-bottom: 60px;
+}
+/* ・・・・・・・・・・・・・・ご入浴方法・・・・・・・・・・・・・・ */
+#ganbanyoku-howto {
+  margin-bottom: 190px;
+}
+.howto-list {
+  color: #4c524c;
+  text-align: left;
+}
+.howto-list ol {
+  list-style: none;
+  margin-bottom: 90px;
+}
+.howto-list ol li {
+  margin-bottom: 50px;
+  text-indent: 15em;
+}
+.howto-list ol li:nth-child(2) {
+  text-indent: 16.2em;
+}
+.howto-list ol li:nth-child(3) {
+  margin-bottom: 0px;
+}
+.howto-list ol li:nth-child(4) {
+  text-indent: 16.2em;
+}
+.howto-list ol li:first-child {
+  margin-bottom: 0px;
+}
+.howto-list p {
+  text-align: left;
+  text-indent: 13em;
+}
+/* ・・・・・・・・・・安全にご利用いただくために・・・・・・・・ */
+h4.button-attention {
+  width: 360px;
+}
+#ganbanyoku-attention {
+  padding-bottom: 220px;
+}
+.attention-list ul {
+  list-style: none;
+  color: #4c524c;
+  line-height: 2;
+}
+.attention-list ul li {
+  text-indent: 10em;
+}
+.attention-list p {
+  margin: 40px 0 30px 0;
+  text-indent: 10em;
+
+}
+/* ・・・・・・・・・・・・・・・・・・・・・・・・・カフェ・全体・・・・・・・・・・・・・・・・・・・・・・・・・・・・ */
+/* ・・・・・・・・・・・・・・・・・・・・・・・・・カフェ・メイン・・・・・・・・・・・・・・・・・・・・・・・・・・・ */
+/* ・・・・・・・・・・・・カフェの特徴・・・・・・・・・・・ */
+#about-cafe {
+  margin-bottom: 250px;
+}
+#about-cafe .cafe-text p{
+  text-align: center;
+  color: #4c524c;
+}
+#about-cafe .cafe-text {
+  margin-bottom: 120px;
+}
+#about-cafe .cafe img {
+  width: 400px;
+}
+#about-cafe .star img {
+  width: 190px;
+  position: absolute;
+  left: 100px;
+  top: 1180px;
+}
+.cafe p {
+  text-align: left;
+  color: #4c524c;
+  line-height: 2;
+}
+.cafe {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-bottom: 120px;
+}
+.cafe:nth-child(even) {
+  flex-direction: row-reverse;
+}
+.cafe .about-cafe-text h5 {
+  font-size: 18px;
+  font-weight: normal;
+  text-indent: 1em;
+  margin-bottom: 30px;
+}
+/* ・・・・・・・・・・・・・・・メニュー・・・・・・・・・・・・・・ */
+h4.button-menu {
+  width: 90px;
+}
+#menu-cafe {
+  padding-bottom: 200px;
+}
+#menu-cafe .menu-set img  {
+  width: 300px;
+}
+#menu-cafe .menu-set {
+  display: flex;
+  justify-content: space-around;
+}
+#menu-cafe .menu-set .menu p {
+  text-align: center;
+  margin-bottom: 100px;
+}
+
+/* ・・・・・・・・・・・・・・・・・・・・・・・・・・営業案内・全体・・・・・・・・・・・・・・・・・・・・・・ */
+.about main .local-nav {
+  position: inherit;
+  display: block;
+  width: 800px;
+  margin: 0 auto;
+}
+.about main .local-nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+/* ・・・・・・・・・・・・・・・・・・・・・営業案内・メイン・・・・・・・・・・・・・・・・・・・・・・・・・・ */
+.about .main-wrapper {
+  padding-bottom: 220px;
+}
+.about h4:before {
+  position: initial;
+  width: initial;
+  height: initial;
+  content: none;
+  background: initial;
+}
+.about h4 {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 10px;
+}
+.about h5 {
+  color: #333333;
+  font-size: 18px;
+  font-weight: normal;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #333333;
+}
+#time, #price, #access {
+  background-color: #ffefe2;
+  padding: 50px 90px 90px 50px;
+}
+.planet-time,
+.cafe-time,
+.planet-price,
+#access div {
+  background-color: white;
+  padding: 30px;
+}
+/* ・・・・・・・・・・・・・・・営業時間・・・・・・・・・・・・・・ */
+.planet-time div,
+.cafe-time div {
+  display: flex;
+  text-indent: 1em;
+}
+.planet-time div {
+  margin-bottom: 10px;
+}
+.cafe-time div {
+  padding-bottom: 30px;
+}
+.planet-time div p:first-child::after,
+.cafe-time div p:first-child::after {
+  content: "|";
+  margin-left: 30px;
+  margin-right: 20px;
+}
+/* ・・・・・・・・・・・・・・・価格・・・・・・・・・・・・・・ */
+.planet-price table {
+  margin-bottom: 25px;
+}
+.planet-price table ,
+.planet-price td,
+.planet-price th {
+  border-collapse: collapse;
+}
+.planet-price td,
+.planet-price th {
+  padding: 30px;
+  width: 180px;
+  border-bottom: 1px solid #595959;
+  text-indent: 0.5em;
+}
+.planet-price tr td:nth-child(2) {
+  text-indent: 2.5em;
+}
+.planet-price tr td:nth-child(3) {
+  text-indent: 2.5em;
+}
+.planet-price tr:first-child td {
+  text-indent: 0.5em;
+}
+.planet-price th {
+  background: #ffefe2;
+}
+.planet-price {
+  padding-bottom: 60px;
+}
+.planet-price p{
+  text-indent: 2em;
+}
+/* ・・・・・・・・・・・・・アクセス・・・・・・・・・・・ */
+#access div {
+  padding-bottom: 0px;
+}
+#access h5 {
+  border-bottom: inherit;
+}
+#access h5 .fa {
+  margin-right: 10px;
+}
+#access div p {
+  text-indent: 1em;
+}
+#access .access-map {
+  padding-bottom: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.access-map dl {
+  margin-left: 20px;
+  flex: 1;
+}
+.access-map dl dt {
+  float: left;
+  clear: both;
+}
+.access-map iframe {
+  margin-right: 30px;
+}
+/* ・・・・・・・・・・・・・・・・・・・・・・問い合わせ・全体・・・・・・・・・・・・・・・・・・・・・・ */
+.contact .key div {
+  text-align: center;
+  margin: 120px 0 90px 0;
+}
+/* ・・・・・・・・・・・・・・・・・・・・・・問い合わせ・メイン・・・・・・・・・・・・・・・・・・・・・・ */
+.contact .main-wrapper {
+  padding-bottom: 220px;
+}
+form {
+  padding-bottom: 100px;
+  color: #595959;
+}
+#contact {
+  background-color: #ffefe2;
+  padding: 90px;
+}
+#contact div {
+  background-color: white;
+  padding: 60px 60px 0px 60px;
+}
+form .mark {
+  color: red;
+}
+.contact-text {
+  font-size: 15.5px;
+  letter-spacing: 1.5px;
+}
+.contact-message {
+  margin-bottom: 20px;
+}
+form dl dt{
+  float: left;
+  padding: 1em;
+  clear: both;
+  margin-left: 20px;
+}
+form dl dd {
+  padding: 1em 0 3em 20em;
+  border-bottom: 1px solid #595959;
+  margin: 40px 0;
+}
+form dl dd:last-child {
+  margin-bottom: 80px;
+}
+/* input */
+input {
+  font-size: 16px;
+  padding: 10px;
+}
+input[type="email"],
+input[type="text"],
+input[type="tel"] {
+  width: 70%;
+}
+input[placeholder="田中 太郎"],
+input[placeholder="たなか たろう"]{
+  letter-spacing: 8px;
+  padding-left: 12px;
+}
+input[placeholder="sample@test.com"] {
+  padding-left: 10px;
+  letter-spacing: 5px;
+}
+input[placeholder="XXX-XXXX-XXXX"] {
+  letter-spacing: 3px;
+  padding-left: 10px;
+}
+input[type="submit"]:hover {
+  opacity: 0.8;
+}
+p.submit{
+  text-align: center;
+}
+p.submit input {
+  padding: 15px 70px;
+  background-color: #d9e0ef;
+  color: #595959;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 18px;
+  box-sizing: border-box;
+  box-shadow: 0px 8px #bec4cf;
+  border-style: none;
+}
+p.submit input:active {
+  position: relative;
+  top: 8px;
+  box-shadow: none;
+}
+textarea {
+  width: 90%;
+  letter-spacing: 3;
+}
